@@ -1,0 +1,92 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(135deg,#1e1e2f,#3b2f2f);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+.hero{
+    text-align:center;
+    position:relative;
+}
+
+.coffee-cat{
+    width:300px;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+    opacity:0;
+    transform:translateY(250px) scale(.4) rotate(-10deg);
+
+    animation:
+        popUp 1.2s ease forwards,
+        float 3s ease-in-out infinite 1.2s;
+}
+
+@keyframes popUp{
+
+    0%{
+        opacity:0;
+        transform:translateY(250px) scale(.4) rotate(-10deg);
+    }
+
+    70%{
+        opacity:1;
+        transform:translateY(-30px) scale(1.08) rotate(2deg);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+.content{
+    margin-top:30px;
+}
+
+h1{
+    font-size:3rem;
+}
+
+p{
+    margin:15px 0 30px;
+    color:#ddd;
+    font-size:1.2rem;
+}
+
+.btn{
+    display:inline-block;
+    background:#ff813f;
+    color:white;
+    padding:15px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    background:#ff974f;
+}
