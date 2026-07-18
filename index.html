@@ -1,12 +1,140 @@
-<div class="hero">
-    <img src="coffee-cat.jpg" alt="Coffee Cat" class="coffee-cat">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee? ☕</title>
 
-    <div class="content">
-        <h1>Enjoying my work?</h1>
-        <p>This little guy thinks you deserve a coffee... ☕</p>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        <a href="https://buymeacoffee.com/yourname" class="btn">
-            Buy Me a Coffee
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#f6f8fc,#e6edf7);
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.container{
+    text-align:center;
+}
+
+.cat{
+    width:320px;
+    max-width:90%;
+    border-radius:18px;
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+    opacity:0;
+    transform:translateY(300px) scale(.6);
+
+    animation:popup 1.2s ease forwards,
+               float 3s ease-in-out infinite 1.2s;
+}
+
+@keyframes popup{
+    0%{
+        opacity:0;
+        transform:translateY(300px) scale(.6);
+    }
+
+    70%{
+        opacity:1;
+        transform:translateY(-20px) scale(1.05);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+.message{
+    margin-top:30px;
+    opacity:0;
+    animation:fadeIn 1s ease forwards;
+    animation-delay:1.2s;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    font-size:3rem;
+    color:#333;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:1.25rem;
+    color:#666;
+    margin-bottom:30px;
+}
+
+.button{
+    display:inline-block;
+    padding:15px 35px;
+    background:#ff7b29;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-size:1.1rem;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.button:hover{
+    transform:scale(1.08);
+    background:#ff9248;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <img src="coffee-cat.jpg" class="cat" alt="Coffee Cat">
+
+    <div class="message">
+        <h1>Coffee? ☕</h1>
+
+        <p>
+            Hi! 😊<br><br>
+            I know this is a little unexpected, but I thought this cat could ask better than I could.<br><br>
+            If you'd like to grab a coffee sometime.
+        </p>
+
+        <a href="mailto:manmicheal214@gmail.com?subject=Coffee%20☕" class="button">
+            Sure! ☕
         </a>
     </div>
+
 </div>
+
+</body>
+</html>
